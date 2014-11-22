@@ -5,12 +5,12 @@
 var inspect = require('util').inspect;
 var Client = require('mariasql');
 
-function selectQuery(query){
+function selectQuery(query, resultfunc){
     var result = [];
     var c = new Client();
 
     c.connect({
-        host: 'rous.wpi.edu',
+        host: '127.0.0.1',
         user: 'ajroskuski',
         password: 'ajroskuski_pw',
         db: 'ajroskuski_db'
@@ -41,17 +41,20 @@ function selectQuery(query){
         })
         .on('end', function(){
             console.log("Done with all results");
+            resultfunc(result);
         });
 
     c.end();
 
-    return result;
+    //return result;
 }
 
 
 
 exports.requestJSON = function(req, res){
-    console.log(selectQuery('SELECT * FROM sidewalk'));
+    selectQuery('SELECT * FROM sidewalk;', function (res){
+        console.log(res);
+    });
 
 };
 
