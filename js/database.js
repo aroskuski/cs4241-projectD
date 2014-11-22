@@ -5,7 +5,7 @@
 var inspect = require('util').inspect;
 var Client = require('mariasql');
 
-function selectQuery(query, resultfunc){
+function selectQuery(query, res, resultfunc){
     var result = [];
     var c = new Client();
 
@@ -41,7 +41,7 @@ function selectQuery(query, resultfunc){
         })
         .on('end', function(){
             console.log("Done with all results");
-            resultfunc(result);
+            resultfunc(res, result);
         });
 
     c.end();
@@ -52,12 +52,18 @@ function selectQuery(query, resultfunc){
 
 
 exports.requestJSON = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', function (res){
-        console.log(res);
+    selectQuery('SELECT * FROM sidewalk;', function (res, result){
+        console.log(JSON.stringify(result));
+        res.set('Content-Type', 'application/json');
+        res.send(JSON.stringify(result));
     });
 
 };
 
 exports.requestTable = function(req, res){
-
+    selectQuery('SELECT * FROM sidewalk;', function (res, result){
+        console.log(JSON.stringify(result));
+        //res.set('Content-Type', 'application/json');
+        res.render('tabletest', {data: result});
+    });
 };
