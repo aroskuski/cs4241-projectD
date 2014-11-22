@@ -9,8 +9,10 @@ router.get('/', function(req, res) {
 
 
 router.get('/dashboard.html', function(req, res){
-  dbinterface.requestJSON(req,res);
+  //dbinterface.requestJSON(req,res);
   res.render('index', { title: 'Success' });
 });
+
+router.get('/table', dbinterface.requestTable());
 
 module.exports = router;
