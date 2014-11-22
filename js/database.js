@@ -51,7 +51,7 @@ function selectQuery(query){
 
 
 exports.requestJSON = function(req, res){
-
+    console.log(selectQuery('SELECT * FROM sidewalk'));
 
 };
 
