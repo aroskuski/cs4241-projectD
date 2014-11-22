@@ -13,6 +13,6 @@ router.get('/dashboard.html', function(req, res){
   res.render('index', { title: 'Success' });
 });
 
-router.get('/table', dbinterface.requestTable());
+router.get('/table', dbinterface.requestTable);
 
 module.exports = router;
