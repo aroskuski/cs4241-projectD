@@ -9,7 +9,3 @@ exports.list = function(req, res){
 
 
 };
-
-exports.test = function(){
-    console.log('This function was called');
-};

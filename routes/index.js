@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
 
 router.get('/dashboard.html', function(req, res){
-  dbinterface.test();
+  //dbinterface.test();
   res.render('index', { title: 'Success' });
 });
 
