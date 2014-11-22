@@ -5,3 +5,11 @@
 var inspect = require('util').inspect;
 var Client = require('mariasql');
 
+exports.list = function(req, res){
+
+
+};
+
+exports.test = function(){
+    console.log('This function was called');
+};

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var dbinterface = require('../js/database.js');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -8,6 +9,7 @@ router.get('/', function(req, res) {
 
 
 router.get('/dashboard.html', function(req, res){
+  dbinterface.test();
   res.render('index', { title: 'Success' });
 });
 
