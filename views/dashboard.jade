@@ -1,0 +1,51 @@
+// File:    dashboard.jade
+// Date:    11/22/2014
+// Version: 1.0
+//
+// Description:
+// This file is a Jade template for the layout of the dashboard.html
+// webpage produced for the #D Module assignment.
+
+extends layout
+
+   block content
+
+      // The div that provides the user with form entry to the SQL database
+      div("id" = "div1", class = "formdiv")
+         // Instructions for the user
+         p("id"="instructions", class="text1")
+          | Instructions for the user input form shown below
+         // Form for accepting user input
+         form(name = "form", action = "", method = "post")
+            input(type="text", name="input1")
+            input(type="text", name="input2")
+            input(type="submit", value="submit")
+
+      // The div that provides the text and graph component
+      div("id"="div2", class="div2class")
+         // The displayed graph
+         div("id"="graph1", class="graphclass1")
+         // Explanation of the displayed graph content
+         p("id"="explanation", class="text2")
+          | Explanation of displayed graph content
+         // Buttons to change the displayed content
+         button("id"="changebtn1", class="btn1")
+         button("id"="changebtn2", class="btn2")
+
+      // The div that provides the
+      div("id" = "div3", class = "div3class")
+         // The displayed chart
+         div("id"="chart1", class="chartclass1")
+         // The displayed image
+         div("id"="image1", class="imageclass1")
+         // Buttons to change the displayed content
+         button("id"="changebtn3", class="btn3")
+         button("id"="changebtn4", class="btn4")
+
+      // The div that provides the
+      div("id" = "div4", class = "div4class")
+         // The displayed chart
+         div("id"="chart2", class="chartclass2")
+         // Explanation of the displayed chart content
+         p("id"="explanation", class="text3")
+          | Explanation of displayed chart content
