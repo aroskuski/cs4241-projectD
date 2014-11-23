@@ -52,7 +52,7 @@ function selectQuery(query, res, resultfunc){
 
 
 exports.requestJSON = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', function (res, result){
+    selectQuery('SELECT * FROM sidewalk;', res, function (res, result){
         console.log(JSON.stringify(result));
         res.set('Content-Type', 'application/json');
         res.send(JSON.stringify(result));
@@ -61,7 +61,7 @@ exports.requestJSON = function(req, res){
 };
 
 exports.requestTable = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', function (res, result){
+    selectQuery('SELECT * FROM sidewalk;', res,  function (res, result){
         console.log(JSON.stringify(result));
         //res.set('Content-Type', 'application/json');
         res.render('tabletest', {data: result});
