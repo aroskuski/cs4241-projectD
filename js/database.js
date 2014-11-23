@@ -67,3 +67,7 @@ exports.requestTable = function(req, res){
         res.render('tabletest', {data: result});
     });
 };
+
+exports.postData = function (req, res) {
+
+};
