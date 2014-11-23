@@ -61,7 +61,11 @@ exports.requestJSON = function(req, res){
 };
 
 exports.requestTable = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', res,  function (res, result){
+    var select = Client.escape(req.params.select);
+    var where = Client.escape(req.params.where);
+    var from = Client.escape(req.params.from);
+    console.log('SELECT ' + select + ' FROM ' + from + ' WHERE ' + where + ';');
+    selectQuery('SELECT ' + select + ' FROM ' + from + ' WHERE ' + where + ';', res,  function (res, result){
         console.log(JSON.stringify(result));
         //res.set('Content-Type', 'application/json');
         res.render('tabletest', {data: result});
