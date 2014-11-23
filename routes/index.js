@@ -15,6 +15,8 @@ router.get('/dashboard.html', function(req, res){
 
 router.post('/postdata', dbinterface.postData);
 
-router.get('/table/:select/:from/:where', dbinterface.requestTable);
+router.get('/table', dbinterface.requestTable);
+
+router.get('/json', dbinterface.requestJSON);
 
 module.exports = router;

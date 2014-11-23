@@ -1,9 +1,10 @@
 // this iterates over the data table and extracts the values
 
 table
+   tr
+      each i in headers
+         th #{ i}
    each val in data
       tr
-         td #{ val.paver  }
-         td #{ val.planter  }
-         td #{ val.baker }
-         td #{ val.skater }
+         each i in val
+            td #{ i  }
