@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 
 router.get('/dashboard.html', function(req, res){
   //dbinterface.requestJSON(req,res);
-  res.render('index', { title: 'Success' });
+  res.render('dashboard', { title: 'Dashboard' });
 });
 
 router.get('/table', dbinterface.requestTable);
