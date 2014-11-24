@@ -13,6 +13,10 @@ router.get('/dashboard.html', function(req, res){
   res.render('dashboard', { title: 'Dashboard' });
 });
 
+router.post('/postdata', dbinterface.postData);
+
 router.get('/table', dbinterface.requestTable);
+
+router.get('/json', dbinterface.requestJSON);
 
 module.exports = router;

@@ -52,7 +52,18 @@ function selectQuery(query, res, resultfunc){
 
 
 exports.requestJSON = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', res, function (res, result){
+    var query = '';
+    console.log(req.query.select);
+    query += 'SELECT ' + Client.escape(req.query.select);
+    console.log(req.query.from);
+    query += ' FROM ' + Client.escape(req.query.from);
+    console.log(req.query.where);
+    if (req.query.where != undefined) {
+        query += ' WHERE ' + Client.escape(req.query.where);
+    }
+    query += ';';
+    console.log(query);
+    selectQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         res.set('Content-Type', 'application/json');
         res.send(JSON.stringify(result));
@@ -61,9 +72,24 @@ exports.requestJSON = function(req, res){
 };
 
 exports.requestTable = function(req, res){
-    selectQuery('SELECT * FROM sidewalk;', res,  function (res, result){
+    var query = '';
+    console.log(req.query.select);
+    query += 'SELECT ' + Client.escape(req.query.select);
+    console.log(req.query.from);
+    query += ' FROM ' + Client.escape(req.query.from);
+    console.log(req.query.where);
+    if (req.query.where != undefined) {
+        query += ' WHERE ' + Client.escape(req.query.where);
+    }
+    query += ';';
+    console.log(query);
+    selectQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         //res.set('Content-Type', 'application/json');
-        res.render('tabletest', {data: result});
+        res.render('tabletest', {data: result, headers: []});
     });
+};
+
+exports.postData = function (req, res) {
+
 };
