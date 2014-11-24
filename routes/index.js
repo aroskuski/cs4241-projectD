@@ -19,6 +19,10 @@ router.get('/helditem.json', dbinterface.heldItem);
 
 router.get('/nature.json', dbinterface.nature);
 
+router.get('/popular.json', function(req,res){});// requires query string ?id=<number 1-7>
+
+router.get('/moveclass.json', function(req, res){});//optional query sting ?type=<type name(ex: fire water, etc)>
+
 //router.get('/table', dbinterface.requestTable);
 
 //router.get('/json', dbinterface.requestJSON);
