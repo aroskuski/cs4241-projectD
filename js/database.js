@@ -5,9 +5,10 @@
 var inspect = require('util').inspect;
 var Client = require('mariasql');
 
-function selectQuery(query, res, resultfunc){
+function runQuery(query, res, resultfunc){
     var result = [];
     var c = new Client();
+    var query;
 
     c.connect({
         host: '127.0.0.1',
@@ -19,6 +20,9 @@ function selectQuery(query, res, resultfunc){
 
     c.on('connect',function(){
         console.log('Connected to db');
+
+
+
     })
     .on('error', function (err){
         console.log('Client Error ' + err);
@@ -44,52 +48,43 @@ function selectQuery(query, res, resultfunc){
             resultfunc(res, result);
         });
 
+
+
     c.end();
+
 
     //return result;
 }
 
 
 
-exports.requestJSON = function(req, res){
-    var query = '';
-    console.log(req.query.select);
-    query += 'SELECT ' + Client.escape(req.query.select);
-    console.log(req.query.from);
-    query += ' FROM ' + Client.escape(req.query.from);
-    console.log(req.query.where);
-    if (req.query.where != undefined) {
-        query += ' WHERE ' + Client.escape(req.query.where);
-    }
-    query += ';';
-    console.log(query);
-    selectQuery(query, res,  function (res, result){
+function requestJSON(query, res){
+    runQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         res.set('Content-Type', 'application/json');
         res.send(JSON.stringify(result));
     });
 
-};
+}
 
-exports.requestTable = function(req, res){
-    var query = '';
-    console.log(req.query.select);
-    query += 'SELECT ' + Client.escape(req.query.select);
-    console.log(req.query.from);
-    query += ' FROM ' + Client.escape(req.query.from);
-    console.log(req.query.where);
-    if (req.query.where != undefined) {
-        query += ' WHERE ' + Client.escape(req.query.where);
-    }
-    query += ';';
+function requestTable(query , res){
     console.log(query);
-    selectQuery(query, res,  function (res, result){
+    runQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         //res.set('Content-Type', 'application/json');
         res.render('tabletest', {data: result, headers: []});
     });
-};
+}
+
+
 
 exports.postData = function (req, res) {
+    pase //req.body
+    runQuery(query, res,  function (res, result){
+        console.log(JSON.stringify(result));
+        //res.set('Content-Type', 'application/json');
 
+        res.status(204).send();
+        //res.send();
+    });
 };
