@@ -8,7 +8,7 @@ var Client = require('mariasql');
 function runQuery(query, res, resultfunc){
     var result = [];
     var c = new Client();
-    var query;
+    //var query;
 
     c.connect({
         host: '127.0.0.1',
