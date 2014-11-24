@@ -67,6 +67,7 @@ function requestJSON(query, res){
 
 }
 
+/*
 function requestTable(query , res){
     console.log(query);
     runQuery(query, res,  function (res, result){
@@ -75,7 +76,7 @@ function requestTable(query , res){
         res.render('tabletest', {data: result, headers: []});
     });
 }
-
+*/
 
 
 exports.postData = function (req, res) {
@@ -87,4 +88,14 @@ exports.postData = function (req, res) {
         res.status(204).send();
         //res.send();
     });
+};
+
+exports.heldItem = function(req, res){
+  requestJSON('SELECT * FROM view_held;', res);
+
+};
+
+exports.nature = function(req, res){
+    requestJSON('SELECT * FROM view_nature;', res);
+
 };

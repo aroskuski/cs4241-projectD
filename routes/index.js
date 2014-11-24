@@ -15,6 +15,10 @@ router.get('/dashboard.html', function(req, res){
 
 router.post('/postdata', dbinterface.postData);
 
+router.get('/helditem.json', dbinterface.heldItem);
+
+router.get('/nature.json', dbinterface.nature);
+
 //router.get('/table', dbinterface.requestTable);
 
 //router.get('/json', dbinterface.requestJSON);
