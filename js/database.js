@@ -80,7 +80,7 @@ function requestTable(query , res){
 
 
 exports.postData = function (req, res) {
-    pase //req.body
+    //req.body
     runQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         //res.set('Content-Type', 'application/json');
