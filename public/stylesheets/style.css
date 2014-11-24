@@ -1,8 +1,171 @@
+/* This style class is used for the body of the html document */
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/* This style class is used for the first textual input field of the form div */
+.inp1 {
+  border-radius: 5px;
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  width: 40%;
+}
+
+/* This style class is used for the second textual input field of the form div */
+.inp2 {
+  border-radius: 5px;
+  position: absolute;
+  top: 37%;
+  left: 5%;
+  width: 40%;
+}
+
+/* This style class is used for the submission button of the form div */
+.inp3 {
+  border-radius: 5px;
+  position: absolute;
+  top: 52%;
+  left: 5%;
+  width: 20%;
+}
+
+/* This style class is used for the instruction text shown in the form div */
+.text1 {
+  font-family: "Times New Roman", "Times", "serif";
+  font-size: 12px;
+  color: black;
+  text-align: center;
+
+  background: whitesmoke;
+  border: 1px solid firebrick;
+  border-radius: 5px;
+}
+
+/* This style class is used for the explanatory text shown in div 2 */
+.text2 {
+  font-family: "Times New Roman", "Times", "serif";
+  font-size: 12px;
+  color: black;
+  text-align: center;
+
+  background: whitesmoke;
+  border: 1px solid firebrick;
+  border-radius: 5px;
+}
+
+/* This style class is used for the explanatory text shown in div 4 */
+.text3 {
+  font-family: "Times New Roman", "Times", "serif";
+  font-size: 12px;
+  color: black;
+  text-align: center;
+
+  background: whitesmoke;
+  border: 1px solid firebrick;
+  border-radius: 5px;
+}
+
+/* This style class is used for the background div */
+.backgroundiv {
+  background-color: honeydew;
+
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+}
+
+/* This style class is used for the title div */
+.titlediv {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  color: black;
+  font-family: "Times New Roman", times, serif;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  vertical-align: middle;
+  -webkit-justify-content: center;
+
+  position: absolute;
+  top: 0%;
+  left: 2%;
+  height: 12%;
+  width: 96%;
+}
+
+/* This style class is used for the form div */
+.formdiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  position: absolute;
+  top: 13%;
+  left: 2%;
+  height: 41.75%;
+  width: 47.625%
+}
+
+/* This style class is used for the second div */
+.div2class {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  position: absolute;
+  top: 13%;
+  left: 50.375%;
+  height: 41.75%;
+  width: 47.625%;
+}
+
+/* This style class is used for the third div */
+.div3class {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  position: absolute;
+  top: 55.75%;
+  left: 2%;
+  height: 41.75%;
+  width: 47.625%;
+}
+
+/* This style class is used for the fourth div */
+.div4class {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  position: absolute;
+  top: 55.75%;
+  left: 50.375%;
+  height: 41.75%;
+  width: 47.625%;
+}
+
+/* This style class is used for the bottom div */
+.bottomdiv {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1.5px solid darkblue;
+
+  position: absolute;
+  top: 98.5%;
+  left: 2%;
+  height: 1.5%;
+  width: 96%;
+}
+
+/* This style class is used for hyperlinks */
 a {
   color: #00B7FF;
 }
