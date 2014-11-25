@@ -101,9 +101,13 @@ exports.nature = function(req, res){
 };
 
 exports.popular = function(req, res){
-
+    requestJSON('SELECT * FROM view_popular WHERE type =' + Client.escape(req.query.id) + ';', res)
 };
 
 exports.moveClass = function(req, res){
-
+    if(req.query.type != undefined){
+        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move WHERE type=\'' + Client.escape(req.query.type) +'\';', res);
+    } else {
+        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move;', res);
+    }
 };
