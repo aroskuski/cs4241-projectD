@@ -85,7 +85,7 @@ exports.postData = function (req, res) {
     //var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
     var PokedexNo;
     var natureID;
-    runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.Name + '\';', res,  function (res, result){
+    runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
         PokedexNo = result[0].PokedexNo;
         runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', function(res, result) {

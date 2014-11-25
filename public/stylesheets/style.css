@@ -22,11 +22,20 @@ body {
   width: 40%;
 }
 
-/* This style class is used for the submission button of the form div */
+
 .inp3 {
   border-radius: 5px;
   position: absolute;
   top: 52%;
+  left: 5%;
+  width: 20%;
+}
+
+/* This style class is used for the submission button of the form div */
+.inp4 {
+  border-radius: 5px;
+  position: absolute;
+  top: 67%;
   left: 5%;
   width: 20%;
 }
