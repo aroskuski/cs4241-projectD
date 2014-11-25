@@ -162,7 +162,7 @@ function buildchart2(dataArray) {
             series: [{
                 type: 'pie',
                 name: 'Nature',
-                data: [dataArray]
+                data: dataArray
             }]
         });
     });
