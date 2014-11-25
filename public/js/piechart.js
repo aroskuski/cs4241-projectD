@@ -17,7 +17,9 @@ window.addEventListener("load", initialize, false);
 
 // This Javascript function generates the chart for selecting changebtn1
 function generateChart1() {
-    var dataArray = new Array();
+    var dataArray;
+    var proc1;
+    var proc2;
     var pieChart;
 
     // Retrieve the JSON for the required SQL data needed for producing
@@ -29,7 +31,9 @@ function generateChart1() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            dataArray = JSON.parse(xmlhttp.responseText);
+            proc1 = JSON.parse(xmlhttp.responseText[0]);
+            proc2 = JSON.parse(JSON.stringify(eval('('+proc1[0]+')')));
+            dataArray = parseFloat(proc2.keyName);
             console.log(dataArray);
             buildchart1(dataArray);
         }
@@ -47,7 +51,9 @@ function generateChart1() {
 
 // This Javascript function generates the chart for selecting changebtn2
 function generateChart2() {
-    var dataArray = new Array();
+    var dataArray;
+    var proc1;
+    var proc2;
     var pieChart;
 
     // Retrieve the JSON for the required SQL data needed for producing
@@ -59,7 +65,9 @@ function generateChart2() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            dataArray = JSON.parse(xmlhttp.responseText);
+            proc1 = JSON.parse(xmlhttp.responseText[0]);
+            proc2 = JSON.parse(JSON.stringify(eval('('+proc1[0]+')')));
+            dataArray = parseFloat(proc2.keyName);
             console.log(dataArray);
             buildchart2(dataArray);
         }
