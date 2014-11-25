@@ -82,17 +82,39 @@ function requestTable(query , res){
 
 exports.postData = function (req, res) {
     //req.body
-    runQuery(query, res,  function (res, result){
+    //var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
+    var PokedexNo;
+    var natureID;
+    runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.Name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
-        //res.set('Content-Type', 'application/json');
+        PokedexNo = result[0].PokedexNo;
+        runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', function(res, result) {
+            console.log(JSON.stringify(result));
+            natureID = result[0].id;
+            var query = "INSERT INTO div1 (INSERT INTO div1 (pdexID, item, nature) VALUES (";
+            query += PokedexNo;
+            query += ',\'';
+            query += Client.escape(req.body.item);
+            query += '\',';
+            query += natureID;
+            query += ');';
+            console.log(query);
+            runQuery(query, function(res, result){
+                console.log(JSON.stringify(result));
 
-        res.status(204).send();
-        //res.send();
+                res.status(204).send();
+            });
+            //res.set('Content-Type', 'application/json');
+
+            //res.status(204).send();
+            //res.send();
+        });
+
     });
 };
 
 exports.heldItem = function(req, res){
-  requestJSON('SELECT * FROM view_held;', res);
+    requestJSON('SELECT * FROM view_held;', res);
 
 };
 
