@@ -107,8 +107,9 @@ exports.popular = function(req, res){
 
 exports.moveClass = function(req, res){
     if(req.query.type != undefined){
-        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move WHERE type=\'' + Client.escape(req.query.type) +'\';', res);
+        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move WHERE type=\'' + Client.escape(req.query.type)
+        +'\' GROUP BY CLass;', res);
     } else {
-        requestJSON('SELECT Class, COUNT(DISTINCT Class) AS Class_count  FROM Move;', res);
+        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move GROUP BY Class;', res);
     }
 };
