@@ -111,11 +111,7 @@ function buildchart1(dataArray) {
                 }
             },
             // Add the data series that will help to produce the Highchart
-            series: [{
-                type: 'pie',
-                name: 'Pokemon - Most Commonly Held Items',
-                data: dataArray
-            }]
+            series: dataArray
         });
     });
 }
@@ -159,11 +155,7 @@ function buildchart2(dataArray) {
                 }
             },
             // Add the data series that will help to produce the Highchart
-            series: [{
-                type: 'pie',
-                name: 'Nature',
-                data: dataArray
-            }]
+            series: dataArray
         });
     });
 }
