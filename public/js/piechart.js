@@ -31,8 +31,8 @@ function generateChart1() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            proc1 = JSON.parse(xmlhttp.responseText[0]);
-            proc2 = JSON.parse(JSON.stringify(eval('('+proc1[0]+')')));
+            proc1 = JSON.parse(xmlhttp.responseText);
+            proc2 = JSON.parse(JSON.stringify(eval('('+proc1+')')));
             dataArray = parseFloat(proc2.keyName);
             console.log(dataArray);
             buildchart1(dataArray);
@@ -65,8 +65,8 @@ function generateChart2() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            proc1 = JSON.parse(xmlhttp.responseText[0]);
-            proc2 = JSON.parse(JSON.stringify(eval('('+proc1[0]+')')));
+            proc1 = JSON.parse(xmlhttp.responseText);
+            proc2 = JSON.parse(JSON.stringify(eval('('+proc1+')')));
             dataArray = parseFloat(proc2.keyName);
             console.log(dataArray);
             buildchart2(dataArray);
