@@ -29,7 +29,8 @@ function generateChart1() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            dataArray = xmlhttp.responseText;
+            dataArray = JSON.parse(xmlhttp.responseText);
+            console.log(dataArray);
             buildchart1(dataArray);
         }
     }
@@ -58,7 +59,8 @@ function generateChart2() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            dataArray = xmlhttp.responseText;
+            dataArray = JSON.parse(xmlhttp.responseText);
+            console.log(dataArray);
             buildchart2(dataArray);
         }
     }
