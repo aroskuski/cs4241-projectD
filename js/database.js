@@ -114,12 +114,13 @@ exports.postData = function (req, res) {
 };
 
 exports.heldItem = function(req, res){
-    requestJSON('SELECT * FROM view_held;', res);
+    requestJSON('SELECT item AS name, COUNT(item) AS y FROM div1 GROUP BY item;', res);
 
 };
 
 exports.nature = function(req, res){
-    requestJSON('SELECT * FROM view_nature;', res);
+    requestJSON('SELECT nature.nature, COUNT(nature.nature) as nature_count FROM ' +
+    '(div1 JOIN nature) WHERE div1.nature = nature.id GROUP BY nature.nature;', res);
 
 };
 
