@@ -22,7 +22,7 @@ function generateChart1() {
 
     // Retrieve the JSON for the required SQL data needed for producing
     // the pie chart in div 2 through a request object
-    var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHTTPRequest();
 
     // define a callback function to use later once a response is received
     xmlhttp.onreadystatechange = function() {
@@ -51,7 +51,7 @@ function generateChart2() {
 
     // Retrieve the JSON for the required SQL data needed for producing
     // the second pie chart in div 2 through a request object
-    var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHTTPRequest();
 
     // define a callback function to use later once a response is received
     xmlhttp.onreadystatechange = function() {
@@ -111,7 +111,11 @@ function buildchart1(dataArray) {
                 }
             },
             // Add the data series that will help to produce the Highchart
-            series: dataArray
+            series: [{
+                type: 'pie',
+                name: 'Pokemon - Most Commonly Held Items',
+                data: [dataArray]
+            }]
         });
     });
 }
@@ -155,7 +159,11 @@ function buildchart2(dataArray) {
                 }
             },
             // Add the data series that will help to produce the Highchart
-            series: dataArray
+            series: [{
+                type: 'pie',
+                name: 'Nature',
+                data: [dataArray]
+            }]
         });
     });
 }
