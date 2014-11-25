@@ -114,7 +114,7 @@ function buildchart1(dataArray) {
             series: [{
                 type: 'pie',
                 name: 'Pokemon - Most Commonly Held Items',
-                data: [1, 4, 2]
+                data: dataArray
             }]
         });
     });
