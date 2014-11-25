@@ -37,6 +37,7 @@ function generateChart1() {
             dataArray = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < dataArray.length; i++){
                 dataArray[i].y = parseInt(dataArray[i].y);
+                console.log(dataArray[i].y = parseInt(dataArray[i].y));
             }
             console.log(dataArray);
             buildchart1(dataArray);
