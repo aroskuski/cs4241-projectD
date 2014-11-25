@@ -22,7 +22,7 @@ function generateChart1() {
 
     // Retrieve the JSON for the required SQL data needed for producing
     // the pie chart in div 2 through a request object
-    var xmlhttp = new XMLHTTPRequest();
+    var xmlhttp = new XMLHttpRequest();
 
     // define a callback function to use later once a response is received
     xmlhttp.onreadystatechange = function() {
@@ -51,7 +51,7 @@ function generateChart2() {
 
     // Retrieve the JSON for the required SQL data needed for producing
     // the second pie chart in div 2 through a request object
-    var xmlhttp = new XMLHTTPRequest();
+    var xmlhttp = new XMLHttpRequest();
 
     // define a callback function to use later once a response is received
     xmlhttp.onreadystatechange = function() {
