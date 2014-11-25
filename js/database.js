@@ -59,6 +59,7 @@ function runQuery(query, res, resultfunc){
 
 
 function requestJSON(query, res){
+    console.log(query);
     runQuery(query, res,  function (res, result){
         console.log(JSON.stringify(result));
         res.set('Content-Type', 'application/json');
@@ -108,6 +109,6 @@ exports.moveClass = function(req, res){
     if(req.query.type != undefined){
         requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move WHERE type=\'' + Client.escape(req.query.type) +'\';', res);
     } else {
-        requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move;', res);
+        requestJSON('SELECT Class, COUNT(DISTINCT Class) AS Class_count  FROM Move;', res);
     }
 };
