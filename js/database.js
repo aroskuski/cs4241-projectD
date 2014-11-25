@@ -99,3 +99,11 @@ exports.nature = function(req, res){
     requestJSON('SELECT * FROM view_nature;', res);
 
 };
+
+exports.popular = function(req, res){
+
+};
+
+exports.moveClass = function(req, res){
+
+};
