@@ -8,7 +8,7 @@ body {
 .inp1 {
   border-radius: 5px;
   position: absolute;
-  top: 22%;
+  top: 32%;
   left: 5%;
   width: 40%;
 }
@@ -17,7 +17,7 @@ body {
 .inp2 {
   border-radius: 5px;
   position: absolute;
-  top: 37%;
+  top: 47%;
   left: 5%;
   width: 40%;
 }
@@ -26,7 +26,7 @@ body {
 .inp3 {
   border-radius: 5px;
   position: absolute;
-  top: 52%;
+  top: 62%;
   left: 5%;
   width: 20%;
 }
@@ -35,7 +35,7 @@ body {
 .inp4 {
   border-radius: 5px;
   position: absolute;
-  top: 67%;
+  top: 77%;
   left: 5%;
   width: 20%;
 }
@@ -47,9 +47,15 @@ body {
   color: black;
   text-align: center;
 
-  background: whitesmoke;
+  background: beige;
   border: 1px solid firebrick;
   border-radius: 5px;
+
+  position: absolute;
+  top: -2%;
+  left: 2%;
+  width: 95.625%;
+  height: 18%;
 }
 
 /* This style class is used for the explanatory text shown in div 2 */
@@ -59,9 +65,15 @@ body {
   color: black;
   text-align: center;
 
-  background: whitesmoke;
+  background: beige;
   border: 1px solid firebrick;
   border-radius: 5px;
+
+  position: absolute;
+  top: 69.5%;
+  left: 2%;
+  width: 95.625%;
+  height: 18%;
 }
 
 /* This style class is used for the explanatory text shown in div 4 */
@@ -78,7 +90,7 @@ body {
 
 /* This style class is used for the background div */
 .backgroundiv {
-  background-color: honeydew;
+  background-color: beige;
 
   position: absolute;
   top: 0%;
@@ -89,11 +101,11 @@ body {
 
 /* This style class is used for the title div */
 .titlediv {
-  background-color: lightgray;
+  background-color: black;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
+  border: 1.5px solid floralwhite;
 
-  color: black;
+  color: floralwhite;
   font-family: "Times New Roman", times, serif;
   font-size: 30px;
   text-align: center;
@@ -103,75 +115,106 @@ body {
   -webkit-justify-content: center;
 
   position: absolute;
-  top: 0%;
+  top: 0.5%;
   left: 2%;
-  height: 12%;
+  height: 11.75%;
   width: 96%;
 }
 
 /* This style class is used for the form div */
 .formdiv {
-  background-color: lightgray;
+  background-color: darkred;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
+  border: 1.5px solid floralwhite;
 
   position: absolute;
   top: 13%;
   left: 2%;
-  height: 41.75%;
+  height: 42.5%;
   width: 47.625%
 }
 
 /* This style class is used for the second div */
 .div2class {
-  background-color: lightgray;
+  background-color: darkred;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
+  border: 1.5px solid floralwhite;
 
   position: absolute;
   top: 13%;
   left: 50.375%;
-  height: 41.75%;
+  height: 42.5%;
   width: 47.625%;
 }
 
 /* This style class is used for the third div */
 .div3class {
-  background-color: lightgray;
+  background-color: darkred;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
+  border: 1.5px solid floralwhite;
 
   position: absolute;
-  top: 55.75%;
+  top: 56.5%;
   left: 2%;
-  height: 41.75%;
+  height: 42.5%;
   width: 47.625%;
 }
 
 /* This style class is used for the fourth div */
 .div4class {
-  background-color: lightgray;
+  background-color: darkred;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
+  border: 1.5px solid floralwhite;
 
   position: absolute;
-  top: 55.75%;
+  top: 56.5%;
   left: 50.375%;
-  height: 41.75%;
+  height: 42.5%;
   width: 47.625%;
 }
 
-/* This style class is used for the bottom div */
-.bottomdiv {
-  background-color: lightgray;
+/* This style class is used for sizing the Highchart in div 2 */
+.graphclass1 {
+  background-color: beige;
   border-radius: 5px;
-  border: 1.5px solid darkblue;
 
   position: absolute;
-  top: 98.5%;
-  left: 2%;
-  height: 1.5%;
+  height: 70.5%;
   width: 96%;
+  left: 2%;
+  top: 2%;
+}
+
+/* This style class is used for placing the first button in div 2 */
+.btn1 {
+  position: absolute;
+  top: 93%;
+  left: 2%;
+  width: 47.5%;
+}
+
+/* This style class is used for placing the second button in div 2 */
+.btn2 {
+  position: absolute;
+  top: 93%;
+  left: 50.5%;
+  width: 47.5%;
+}
+
+/* This style class is used for placing the first button in div 3 */
+.btn3 {
+  position: absolute;
+  top: 93%;
+  left: 2%;
+  width: 47.5%;
+}
+
+/* This style class is used for placing the second button in div 3 */
+.btn4 {
+  position: absolute;
+  top: 93%;
+  left: 50.5%;
+  width: 47.5%;
 }
 
 /* This style class is used for hyperlinks */
