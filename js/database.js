@@ -85,13 +85,15 @@ exports.postData = function (req, res) {
     //var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
     var PokedexNo;
     var natureID;
+    console.log("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';');
     runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
         PokedexNo = result[0].PokedexNo;
-        runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', function(res, result) {
+        console.log("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';');
+        runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', res, function(res, result) {
             console.log(JSON.stringify(result));
             natureID = result[0].id;
-            var query = "INSERT INTO div1 (INSERT INTO div1 (pdexID, item, nature) VALUES (";
+            var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
             query += PokedexNo;
             query += ',\'';
             query += Client.escape(req.body.item);
@@ -99,7 +101,7 @@ exports.postData = function (req, res) {
             query += natureID;
             query += ');';
             console.log(query);
-            runQuery(query, function(res, result){
+            runQuery(query, res, function(res, result){
                 console.log(JSON.stringify(result));
 
                 res.status(204).send();
