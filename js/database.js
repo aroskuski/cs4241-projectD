@@ -127,7 +127,8 @@ exports.nature = function(req, res){
 };
 
 exports.popular = function(req, res){
-    requestJSON('SELECT * FROM view_popular WHERE type =' + Client.escape(req.query.id) + ';', res)
+    requestJSON('SELECT pkmn.Name, popular.popnum FROM popular JOIN pkmn WHERE pkmn.PokedexNo = popular.pdex AND popcat=' + Client.escape(req.query.id)
+    + ' ORDER BY popular.popnum,pkmn.Name ASC;', res)
 };
 
 exports.moveClass = function(req, res){
