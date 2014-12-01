@@ -6,7 +6,7 @@ var inspect = require('util').inspect;
 var Client = require('mariasql');
 
 function runQuery(query, res, resultfunc){
-    var result = [];
+    var out = [];
     var c = new Client();
     //var query;
 
@@ -32,12 +32,13 @@ function runQuery(query, res, resultfunc){
     });
 
     c.query(query)
-        .on('result', function (res){
-            res.on('row',function(row){
-                result.push(row);
+        .on('result', function (result){
+            result.on('row',function(row){
+                out.push(row);
             })
                 .on('error', function(err){
                     console.log("result error " + inspect(err));
+                    res.status(400);
                 })
                 .on('end', function(){
                     console.log('Result finished successfully')
@@ -45,7 +46,7 @@ function runQuery(query, res, resultfunc){
         })
         .on('end', function(){
             console.log("Done with all results");
-            resultfunc(res, result);
+            resultfunc(res, out);
         });
 
 
@@ -85,13 +86,24 @@ exports.postData = function (req, res) {
     //var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
     var PokedexNo;
     var natureID;
+    res.status(204);
+    console.log("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';');
     runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
-        PokedexNo = result[0].PokedexNo;
-        runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', function(res, result) {
+        if (result[0] != undefined){
+            PokedexNo = result[0].PokedexNo;
+        } else {
+            PokedexNo = 0;
+        }
+        console.log("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';');
+        runQuery("SELECT * FROM nature WHERE nature=\'" + req.body.nature + '\';', res, function(res, result) {
             console.log(JSON.stringify(result));
-            natureID = result[0].id;
-            var query = "INSERT INTO div1 (INSERT INTO div1 (pdexID, item, nature) VALUES (";
+            if (result[0] != undefined){
+                natureID = result[0].id;
+            } else {
+                natureID = 100;
+            }
+            var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
             query += PokedexNo;
             query += ',\'';
             query += Client.escape(req.body.item);
@@ -99,10 +111,10 @@ exports.postData = function (req, res) {
             query += natureID;
             query += ');';
             console.log(query);
-            runQuery(query, function(res, result){
+            runQuery(query, res, function(res, result){
                 console.log(JSON.stringify(result));
 
-                res.status(204).send();
+                res.send();
             });
             //res.set('Content-Type', 'application/json');
 
@@ -125,7 +137,8 @@ exports.nature = function(req, res){
 };
 
 exports.popular = function(req, res){
-    requestJSON('SELECT * FROM view_popular WHERE type =' + Client.escape(req.query.id) + ';', res)
+    requestJSON('SELECT pkmn.Name, popular.popnum FROM popular JOIN pkmn WHERE pkmn.PokedexNo = popular.pdex AND popcat=' + Client.escape(req.query.id)
+    + ' ORDER BY popular.popnum,pkmn.Name ASC;', res)
 };
 
 exports.moveClass = function(req, res){
