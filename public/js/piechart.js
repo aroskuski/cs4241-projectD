@@ -9,6 +9,7 @@
 
 // This Javascript function adds event listeners to the two change buttons in div 2
 function initialize() {
+    generateChart1();
     document.getElementById("changebtn1").addEventListener("click", generateChart1, false);
     document.getElementById("changebtn2").addEventListener("click", generateChart2, false);
 }
