@@ -6,7 +6,7 @@ var inspect = require('util').inspect;
 var Client = require('mariasql');
 
 function runQuery(query, res, resultfunc){
-    var result = [];
+    var out = [];
     var c = new Client();
     //var query;
 
@@ -32,12 +32,13 @@ function runQuery(query, res, resultfunc){
     });
 
     c.query(query)
-        .on('result', function (res){
-            res.on('row',function(row){
-                result.push(row);
+        .on('result', function (result){
+            result.on('row',function(row){
+                out.push(row);
             })
                 .on('error', function(err){
                     console.log("result error " + inspect(err));
+                    res.status(400);
                 })
                 .on('end', function(){
                     console.log('Result finished successfully')
@@ -45,7 +46,7 @@ function runQuery(query, res, resultfunc){
         })
         .on('end', function(){
             console.log("Done with all results");
-            resultfunc(res, result);
+            resultfunc(res, out);
         });
 
 
@@ -85,6 +86,7 @@ exports.postData = function (req, res) {
     //var query = "INSERT INTO div1 (pdexID, item, nature) VALUES (";
     var PokedexNo;
     var natureID;
+    res.status(204);
     console.log("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';');
     runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
@@ -104,7 +106,7 @@ exports.postData = function (req, res) {
             runQuery(query, res, function(res, result){
                 console.log(JSON.stringify(result));
 
-                res.status(204).send();
+                res.send();
             });
             //res.set('Content-Type', 'application/json');
 
