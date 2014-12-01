@@ -11,6 +11,7 @@ body {
   top: 32%;
   left: 5%;
   width: 40%;
+  height: 5%;
 }
 
 /* This style class is used for the second textual input field of the form div */
@@ -20,6 +21,7 @@ body {
   top: 47%;
   left: 5%;
   width: 40%;
+  height: 5%;
 }
 
 
@@ -28,7 +30,8 @@ body {
   position: absolute;
   top: 62%;
   left: 5%;
-  width: 20%;
+  width: 40%;
+  height: 5%;
 }
 
 /* This style class is used for the submission button of the form div */
@@ -38,6 +41,14 @@ body {
   top: 77%;
   left: 5%;
   width: 20%;
+  height: 7%;
+  background-color: #C0C0C0;
+}
+
+.inp4:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 /* This style class is used for the instruction text shown in the form div */
@@ -48,13 +59,12 @@ body {
   text-align: center;
 
   background: beige;
-  border: 1px solid firebrick;
   border-radius: 5px;
 
   position: absolute;
   top: -2%;
   left: 2%;
-  width: 95.625%;
+  width: 96%;
   height: 18%;
 }
 
@@ -65,14 +75,13 @@ body {
   color: black;
   text-align: center;
 
-  background: beige;
-  border: 1px solid firebrick;
+  background: white;
   border-radius: 5px;
 
   position: absolute;
-  top: 69.5%;
+  top: 66.5%;
   left: 2%;
-  width: 95.625%;
+  width: 96%;
   height: 18%;
 }
 
@@ -123,7 +132,7 @@ body {
 
 /* This style class is used for the form div */
 .formdiv {
-  background-color: darkred;
+  background-color: #709BB8;
   border-radius: 5px;
   border: 1.5px solid floralwhite;
 
@@ -136,7 +145,7 @@ body {
 
 /* This style class is used for the second div */
 .div2class {
-  background-color: darkred;
+  background-color: #709BB8;
   border-radius: 5px;
   border: 1.5px solid floralwhite;
 
@@ -149,7 +158,7 @@ body {
 
 /* This style class is used for the third div */
 .div3class {
-  background-color: darkred;
+  background-color: #709BB8;
   border-radius: 5px;
   border: 1.5px solid floralwhite;
 
@@ -162,7 +171,7 @@ body {
 
 /* This style class is used for the fourth div */
 .div4class {
-  background-color: darkred;
+  background-color: #709BB8;
   border-radius: 5px;
   border: 1.5px solid floralwhite;
 
@@ -175,12 +184,24 @@ body {
 
 /* This style class is used for sizing the Highchart in div 2 */
 .graphclass1 {
-  background-color: beige;
+  background-color: white;
   border-radius: 5px;
 
   position: absolute;
-  height: 70.5%;
+  height: 66.5%;
   width: 96%;
+  left: 2%;
+  top: 2%;
+}
+
+/* This style class is used for sizing the Highchart in div 4 */
+.graphclass2 {
+  background-color: white;
+  border-radius: 5px;
+
+  position: absolute;
+  height: 96%;
+  width: 74%;
   left: 2%;
   top: 2%;
 }
@@ -188,17 +209,37 @@ body {
 /* This style class is used for placing the first button in div 2 */
 .btn1 {
   position: absolute;
-  top: 93%;
-  left: 2%;
-  width: 47.5%;
+  top: 91.5%;
+  left: 29.5%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
+}
+
+/* This style class is used for hovering over the first button in div 2 */
+.btn1:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 /* This style class is used for placing the second button in div 2 */
 .btn2 {
   position: absolute;
-  top: 93%;
+  top: 91.5%;
   left: 50.5%;
-  width: 47.5%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
+}
+
+/* This style class is used for hovering over the second button in div 2 */
+.btn2:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 /* This style class is used for placing the first button in div 3 */
