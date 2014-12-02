@@ -54,7 +54,6 @@ body {
 /* This style class is used for the instruction text shown in the form div */
 .text1 {
   font-family: "Times New Roman", "Times", "serif";
-  font-size: 12px;
   color: black;
   text-align: center;
 
@@ -71,7 +70,6 @@ body {
 /* This style class is used for the explanatory text shown in div 2 */
 .text2 {
   font-family: "Times New Roman", "Times", "serif";
-  font-size: 12px;
   color: black;
   text-align: center;
 
@@ -88,7 +86,6 @@ body {
 /* This style class is used for the explanatory text shown in div 4 */
 .text3 {
   font-family: "Times New Roman", "Times", "serif";
-  font-size: 12px;
   color: black;
   text-align: center;
 
