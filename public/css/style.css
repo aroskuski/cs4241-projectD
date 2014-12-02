@@ -57,7 +57,7 @@ body {
   color: black;
   text-align: center;
 
-  background: beige;
+  background: white;
   border-radius: 5px;
 
   position: absolute;
@@ -267,6 +267,13 @@ body {
   background-color: #C0C0C0;
 }
 
+/* This style class is used for hovering with the first button in div 3 */
+.btn3:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
 /* This style class is used for placing the second button in div 3 */
 .btn4 {
   position: absolute;
@@ -278,6 +285,13 @@ body {
   background-color: #C0C0C0;
 }
 
+/* This style class is used for hovering with the second button in div 3 */
+.btn4:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
 /* This style class is used for placing the third button in div 3 */
 .btn5 {
   position: absolute;
@@ -287,6 +301,13 @@ body {
   height: 7%;
   border-radius: 5px;
   background-color: #C0C0C0;
+}
+
+/* This style class is used for hovering with the third button in div 3 */
+.btn5:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 /* This style class is used for placing the selection box in div 4 */

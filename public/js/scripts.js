@@ -346,7 +346,8 @@ function generateChart3Btn1() {
                 $('#chart1').highcharts({
                     // Prepare some stylistic properties for the chart
                     chart: {
-                        type: 'bar'
+                        type: 'bar',
+                        borderRadius: 5
                     },
                     // Set the title of the chart
                     title: {
@@ -431,7 +432,8 @@ function generateChart3Btn2() {
                 $('#chart1').highcharts({
                     // Prepare some stylistic properties for the chart
                     chart: {
-                        type: 'bar'
+                        type: 'bar',
+                        borderRadius: 5
                     },
                     // Set the title of the chart
                     title: {
@@ -518,7 +520,8 @@ function generateChart3Btn3() {
                 $('#chart1').highcharts({
                     // Prepare some stylistic properties for the chart
                     chart: {
-                        type: 'bar'
+                        type: 'bar',
+                        borderRadius: 5
                     },
                     // Set the title of the chart
                     title: {
