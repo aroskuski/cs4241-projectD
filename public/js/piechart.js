@@ -12,9 +12,35 @@ function initialize() {
     generateChart1();
     document.getElementById("changebtn1").addEventListener("click", generateChart1, false);
     document.getElementById("changebtn2").addEventListener("click", generateChart2, false);
+
+    document.getElementById("inp4").addEventListener("click", formsubmit, false);
 }
 
 window.addEventListener("load", initialize, false);
+
+function formsubmit(){
+    var xmlhttp = new XMLHttpRequest();
+    var name = document.getElementById("inp1").value;
+    var item = document.getElementById("inp2").value;
+    var nature = document.getElementById("inp3").value;
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 204){
+            document.getElementById("inp1").value = "";
+            document.getElementById("inp2").value = "";
+            document.getElementById("inp3").value = "";
+            generateChart1();
+        }
+
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 400){
+            window.alert("Invalid data entered");
+        }
+    };
+
+    xmlhttp.open("POST", "postdata", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    console.log("name=" + name + "&item=" + item + "&nature=" + nature);
+    xmlhttp.send("name=" + name + "&item=" + item + "&nature=" + nature);
+}
 
 // This Javascript function generates the chart for selecting changebtn1
 function generateChart1() {

@@ -87,6 +87,13 @@ exports.postData = function (req, res) {
     var PokedexNo;
     var natureID;
     res.status(204);
+    console.log("name " + req.body.name);
+    console.log("item " + req.body.item);
+    console.log("nature " + req.body.nature);
+    if(req.body.name == undefined || req.body.item == undefined || req.body.nature == undefined){
+        res.status(400).send();
+        return;
+    }
     console.log("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';');
     runQuery("SELECT * FROM pkmn WHERE Name=\'" + req.body.name + '\';', res,  function (res, result){
         console.log(JSON.stringify(result));
