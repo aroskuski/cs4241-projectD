@@ -24,7 +24,7 @@ body {
   height: 5%;
 }
 
-
+/* This style class is used for the third textual input field of the form div */
 .inp3 {
   border-radius: 5px;
   position: absolute;
@@ -211,6 +211,18 @@ body {
   top: 2%;
 }
 
+/* This style class is used for sizing the Highchart in div 3 */
+.chartclass1 {
+  background-color: beige;
+  border-radius: 5px;
+
+  position: absolute;
+  height: 96%;
+  width: 74.5%;
+  left: 2%;
+  top: 2%;
+}
+
 /* This style class is used for placing the first button in div 2 */
 .btn1 {
   position: absolute;
@@ -250,17 +262,34 @@ body {
 /* This style class is used for placing the first button in div 3 */
 .btn3 {
   position: absolute;
-  top: 93%;
-  left: 2%;
-  width: 47.5%;
+  top: 50%;
+  left: 78%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
 }
 
 /* This style class is used for placing the second button in div 3 */
 .btn4 {
   position: absolute;
-  top: 93%;
-  left: 50.5%;
-  width: 47.5%;
+  top: 65%;
+  left: 78%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
+}
+
+/* This style class is used for placing the third button in div 3 */
+.btn5 {
+  position: absolute;
+  top: 80%;
+  left: 78%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
 }
 
 /* This style class is used for placing the selection box in div 4 */
@@ -302,6 +331,16 @@ body {
   font-family: "Times New Roman", "Times", "serif";
   font-weight: bold;
   color: black;
+}
+
+/* This style class is used for the image contained in div 3 */
+.imageclass1 {
+  position: absolute;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+  left: 80.5%;
+  top: 15%;
 }
 
 /* This style class is used for hyperlinks */
