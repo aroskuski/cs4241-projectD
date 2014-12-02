@@ -16,10 +16,36 @@ function initialize() {
     document.getElementById("changebtn2").addEventListener("click", generateChart2, false);
 
     document.getElementById("inp4").addEventListener("click", formsubmit, false);
+
+    loadParagraphs();
+}
+
+//loads the three paragraphs
+function loadParagraphs() {
+    loadParagraph(1);
+    loadParagraph(2);
+    loadParagraph(3);
+}
+
+//Loads an individual paragraph
+function loadParagraph(id){
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4){
+         document.getElementById("text" + id).innerHTML = xmlhttp.responseText;
+
+        }
+    };
+
+    xmlhttp.open("GEL", "paragraph/" + id, true);
+
+    xmlhttp.send();
 }
 
 window.addEventListener("load", initialize, false);
 
+//Handles the submit button in div1
 function formsubmit(){
     var xmlhttp = new XMLHttpRequest();
     var name = document.getElementById("inp1").value;

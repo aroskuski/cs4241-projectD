@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var dbinterface = require('../js/database.js');
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -11,6 +12,19 @@ router.get('/', function(req, res) {
 router.get('/dashboard.html', function(req, res){
   //dbinterface.requestJSON(req,res);
   res.render('dashboard', { title: 'Dashboard' });
+});
+
+router.get('/paragraph/:id', function(req, res){
+  fs.readFile("text/text" + req.params.id + ".txt", "utf8", function(err,data) {// read file
+    //console.log(err);
+    //console.log(data);
+    //console.log(process.cwd());
+    if (err) {// something went wrong, send error message
+      res.send("Could not find paragraph");
+    } else {
+      res.render('paragraph', {paragraph: data, classname: "text" + req.params.id});
+    }
+  });
 });
 
 router.post('/postdata', dbinterface.postData);

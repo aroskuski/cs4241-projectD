@@ -1,0 +1,1 @@
+This chart shows how many moves belong to each class.  By default, it shows all moves.  You can use the drop-down menu to filter the chart by type.

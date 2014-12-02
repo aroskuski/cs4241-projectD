@@ -1,0 +1,1 @@
+Type in the name of your Pokemon, its held item, and its nature, and click submit to add it to our database.  All three fields are required and are not case sensitive.
