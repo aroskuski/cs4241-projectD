@@ -7,6 +7,8 @@
 // 1.) Listening to change buttons in the second div
 // 2.) Updating the DOM to contain the appropriate pie chart in div 2
 
+var div2chart = 1;
+
 // This Javascript function adds event listeners to the two change buttons in div 2
 function initialize() {
     generateChart1();
@@ -28,7 +30,12 @@ function formsubmit(){
             document.getElementById("inp1").value = "";
             document.getElementById("inp2").value = "";
             document.getElementById("inp3").value = "";
-            generateChart1();
+            if (div2chart == 1){
+                generateChart1();
+            } else if (div2chart == 2){
+                generateChart2();
+            }
+
         }
 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 400){
@@ -56,6 +63,7 @@ function generateChart1() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            div2chart = 1;
             response = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < response.length; i++) {
                 var array = new Array();
@@ -134,6 +142,7 @@ function generateChart2() {
 
         // check to see if the response is fully received
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            div2chart = 2;
             response = JSON.parse(xmlhttp.responseText);
             for (var i = 0; i < response.length; i++) {
                 var array = new Array();

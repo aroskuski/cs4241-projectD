@@ -20,7 +20,9 @@ block content
    div("id" = "div1", class = "formdiv")
       // Instructions for the user
       p("id"="instructions", class="text1")
-         | Instructions for the user input form shown below
+         | Type in the name of your Pokemon, its held item, and its nature, and click submit to add it to our database.
+         br
+         | All three fields are required and are not case sensitive.
       // Form for accepting user input
       //form(name = "form", action = "postdata", method = "post")
       p("id"="field1", class="f1")
@@ -40,7 +42,11 @@ block content
       div("id"="graph1", class="graphclass1")
       // Explanation of the displayed graph content
       p("id"="explanation1", class="text2")
-         | Explanation of displayed graph content
+         | Above there is a pie chart with the most common held items or natures based on the data submitted via the form on this page.
+         br
+         | Click the buttons below to change which data is displayed.
+         br
+         | The chart will update automatically when you submit new data with the form.
       // Buttons to change the displayed content
       button("id"="changebtn1", class="btn1")
          | Held Items
