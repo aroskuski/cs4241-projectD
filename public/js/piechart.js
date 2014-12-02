@@ -116,7 +116,7 @@ function generateChart1() {
                 });
             });
         }
-    }
+    };
 
     // prepare the request for the SQL data needed for
     // showing the first chart in div2
@@ -195,7 +195,7 @@ function generateChart2() {
                 });
             });
         }
-    }
+    };
 
     // prepare the request for the SQL data needed for
     // showing the first chart in div2
