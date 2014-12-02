@@ -119,7 +119,7 @@ function generateChart1() {
                     },
                     // Set the title of the chart
                     title: {
-                        text: 'Pokemon - Most Commonly Held Items'
+                        text: 'Pokemon - Commonly Held Items'
                     },
                     // Make it so that a tooltip appears showing the name of the series
                     // and the percentage composition of the currently hovered-over slice
@@ -384,7 +384,7 @@ function generateChart3Btn1() {
                     },
                     // Add the data series that will help to produce the Highchart
                     series: [{
-                        name: "Series1",
+                        name: "Number used",
                         data: dataArray2
                     }]
                 });
@@ -469,7 +469,7 @@ function generateChart3Btn2() {
                     },
                     // Add the data series that will help to produce the Highchart
                     series: [{
-                        name: "Series1",
+                        name: "Number used",
                         data: dataArray2
                     }]
                 });
@@ -556,7 +556,7 @@ function generateChart3Btn3() {
                     },
                     // Add the data series that will help to produce the Highchart
                     series: [{
-                        name: "Series1",
+                        name: "Number used",
                         data: dataArray2
                     }]
                 });
