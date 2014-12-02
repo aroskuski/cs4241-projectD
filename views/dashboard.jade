@@ -53,16 +53,20 @@ block content
       div("id"="image1", class="imageclass1")
       // Buttons to change the displayed content
       button("id"="changebtn3", class="btn3")
-         | Change 3
+         | Singles
       button("id"="changebtn4", class="btn4")
-         | Change 4
+         | Doubles
+      button("id"="changebtn5", class="btn5")
+         | Triples
+
 
    // A div that provides the user with display and JQuery manipulation of data
    div("id" = "div4", class = "div4class")
       // The displayed chart
       div("id"="graph2", class="graphclass2")
       // The displayed selection list for the user
-      select("id"="selector", class="selector")
+
+      select("id"="sel", class="selector")
          option(value="all", selected=true)
             | All
          option(value="bug")
