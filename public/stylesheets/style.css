@@ -79,10 +79,10 @@ body {
   border-radius: 5px;
 
   position: absolute;
-  top: 66.5%;
+  top: 66%;
   left: 2%;
   width: 96%;
-  height: 18%;
+  height: 19%;
 }
 
 /* This style class is used for the explanatory text shown in div 4 */
@@ -92,9 +92,14 @@ body {
   color: black;
   text-align: center;
 
-  background: whitesmoke;
-  border: 1px solid firebrick;
+  background: white;
   border-radius: 5px;
+
+  position: absolute;
+  top: 75.5%;
+  left: 2%;
+  width: 74.5%;
+  height: 18%;
 }
 
 /* This style class is used for the background div */
@@ -196,11 +201,11 @@ body {
 
 /* This style class is used for sizing the Highchart in div 4 */
 .graphclass2 {
-  background-color: white;
+  background-color: beige;
   border-radius: 5px;
 
   position: absolute;
-  height: 96%;
+  height: 76%;
   width: 74.5%;
   left: 2%;
   top: 2%;
@@ -273,7 +278,7 @@ body {
 .f1 {
   position: absolute;
   top: 22%;
-  left: 10%;
+  left: 5%;
   font-family: "Times New Roman", "Times", "serif";
   font-weight: bold;
   color: black;
@@ -283,7 +288,7 @@ body {
 .f2 {
   position: absolute;
   top: 37%;
-  left: 10%;
+  left: 5%;
   font-family: "Times New Roman", "Times", "serif";
   font-weight: bold;
   color: black;
@@ -293,7 +298,7 @@ body {
 .f3 {
   position: absolute;
   top: 52%;
-  left: 10%;
+  left: 5%;
   font-family: "Times New Roman", "Times", "serif";
   font-weight: bold;
   color: black;
