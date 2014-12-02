@@ -201,7 +201,7 @@ body {
 
   position: absolute;
   height: 96%;
-  width: 74%;
+  width: 74.5%;
   left: 2%;
   top: 2%;
 }
@@ -256,6 +256,17 @@ body {
   top: 93%;
   left: 50.5%;
   width: 47.5%;
+}
+
+/* This style class is used for placing the selection box in div 4 */
+.selector {
+  position: absolute;
+  top: 2%;
+  left: 78%;
+  width: 20%;
+  height: 7%;
+  border-radius: 5px;
+  background-color: #C0C0C0;
 }
 
 /* This style class is used for hyperlinks */
