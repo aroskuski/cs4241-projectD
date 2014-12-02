@@ -144,7 +144,7 @@ function generateChart1() {
                     // Add the data series that will help to produce the Highchart
                     series: [{
                         type: 'pie',
-                        name: 'Most Commonly Held Items',
+                        name: 'Commonly Held Items',
                         data: dataArray
                     }]
                 });
@@ -198,7 +198,7 @@ function generateChart2() {
                     },
                     // Set the title of the chart
                     title: {
-                        text: 'Pokemon - Nature'
+                        text: 'Pokemon - Common Natures'
                     },
                     // Make it so that a tooltip appears showing the name of the series
                     // and the percentage composition of the currently hovered-over slice
@@ -223,7 +223,7 @@ function generateChart2() {
                     // Add the data series that will help to produce the Highchart
                     series: [{
                         type: 'pie',
-                        name: 'Nature',
+                        name: 'Common Natures',
                         data: dataArray
                     }]
                 });
