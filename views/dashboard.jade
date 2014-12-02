@@ -71,7 +71,7 @@ block content
       div("id"="graph2", class="graphclass2")
       // The displayed selection list for the user
       select("id"="selector", class="selector")
-         option(value="all")
+         option(value="all", selected=true)
             | All
          option(value="bug")
             | Bug
@@ -111,4 +111,8 @@ block content
             | Water
       // Explanation of the displayed chart content
       p("id"="explanation2", class="text3")
-         | Explanation of displayed chart content
+         | This chart shows how many moves belong to each class.
+         br
+         | By default, it shows all moves.
+         br
+         | You can use the drop-down menu to filter the chart by type.
