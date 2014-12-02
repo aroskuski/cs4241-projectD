@@ -23,8 +23,14 @@ block content
          | Instructions for the user input form shown below
       // Form for accepting user input
       form(name = "form", action = "postdata", method = "post")
+         p("id"="field1", class="f1")
+            | Name
          input(type="text", name="name", class="inp1")
+         p("id"="field2", class="f2")
+            | Item
          input(type="text", name="item", class="inp2")
+         p("id"="field3", class="f3")
+            | Nature
          input(type="text", name="nature", class="inp3")
          input(type="submit", value="submit", class="inp4")
 
