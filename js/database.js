@@ -142,22 +142,27 @@ exports.postData = function (req, res) {
     });
 };
 
+//Wrapper for requestJSON to get a list of held item counts
 exports.heldItem = function(req, res){
     requestJSON('SELECT item AS name, COUNT(item) AS y FROM div1 GROUP BY item;', res);
 
 };
 
+//Wrapper for requestJSON to get a list of nature counts
 exports.nature = function(req, res){
     requestJSON('SELECT nature.nature, COUNT(nature.nature) as nature_count FROM ' +
     '(div1 JOIN nature) WHERE div1.nature = nature.id GROUP BY nature.nature;', res);
 
 };
 
+//Wrapper for requestJSON to get a list of popular pokemon from the given category
 exports.popular = function(req, res){
     requestJSON('SELECT pkmn.Name, popular.popnum FROM popular JOIN pkmn WHERE pkmn.PokedexNo = popular.pdex AND popcat=' + Client.escape(req.query.id)
     + ' ORDER BY popular.popnum,pkmn.Name ASC;', res)
 };
 
+//Wrapper for requestJSON to get a list of move class counts
+// The optional type argument filters the list
 exports.moveClass = function(req, res){
     if(req.query.type != undefined){
         requestJSON('SELECT Class, COUNT(Class) AS Class_count  FROM Move WHERE type=\'' + Client.escape(req.query.type)
